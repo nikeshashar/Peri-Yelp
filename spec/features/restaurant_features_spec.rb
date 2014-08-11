@@ -18,4 +18,22 @@ require 'rails_helper'
 			expect(page).to have_content 'Nandos'
 		end
 	end
+
+	context 'restaurant features' do 
+		before do 
+			Restaurant.create(name: 'Nandos', cuisine: 'Chicken', phone_number: '02089540598')
+		end
+
+		it 'should have a cuisine' do 
+			visit '/restaurants'
+			expect(page).to have_content 'Chicken'
+		end
+
+		it 'should have an telephone number' do 
+			visit 'restaurants'
+			expect(page).to have_content '02089540598'
+		end
+
+	end
+
 end
