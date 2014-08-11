@@ -42,8 +42,23 @@ require 'rails_helper'
 			click_link 'Add a restaurant'
 			fill_in 'Name', with: "Nandos"
 			click_button 'Create Restaurant'
-			expect(current_path).to eq '/restaurants'
 			expect(page).to have_content 'Nandos'
+			expect(current_path).to eq '/restaurants'
+		end
+	end
+
+	context 'editing restaurants' do
+		before do 
+			Restaurant.create(name: 'Nandos', cuisine: 'Chicken', phone_number: '02089540598')
+		end
+
+		it 'should allow user to edit restaurant' do
+			visit '/restaurants'
+			click_link 'Edit Nandos'
+			fill_in 'Name', with: 'Nandos - Edgware'
+			click_button 'Update Restaurant'
+			expect(page).to have_content 'Nandos - Edgware'
+			expect(current_path).to eq '/restaurants'
 		end
 	end
 
