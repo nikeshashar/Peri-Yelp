@@ -23,7 +23,7 @@ require 'rails_helper'
 		before do 
 			Restaurant.create(name: 'Nandos', cuisine: 'Chicken', phone_number: '02089540598')
 		end
-
+ 
 		it 'should have a cuisine' do 
 			visit '/restaurants'
 			expect(page).to have_content 'Chicken'
@@ -33,7 +33,18 @@ require 'rails_helper'
 			visit 'restaurants'
 			expect(page).to have_content '02089540598'
 		end
+	end
 
+
+	context 'creating restaurants' do
+		it 'should fill in a form with the details and end up on the index page' do
+			visit '/restaurants'
+			click_link 'Add a restaurant'
+			fill_in 'Name', with: "Nandos"
+			click_button 'Create Restaurant'
+			expect(current_path).to eq '/restaurants'
+			expect(page).to have_content 'Nandos'
+		end
 	end
 
 end
