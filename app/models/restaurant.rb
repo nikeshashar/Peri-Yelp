@@ -3,7 +3,7 @@ class Restaurant < ActiveRecord::Base
 		location_name
 	end
 
-	has_many :reviews
+	has_many :reviews, dependent: :destroy
 
 	validates :name, presence: true
 	validates :location_name, uniqueness: true, presence: true
