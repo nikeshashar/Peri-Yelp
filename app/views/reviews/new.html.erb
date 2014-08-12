@@ -1,0 +1,11 @@
+<%= form_for [@restaurant, @review] do |f| %>
+	<%= f.label :comments, 'Grill Skill'		%>
+ 	<%= f.text_area :comments	%>
+
+	<%= f.label :rating %>
+	<%= f.select :rating, (1..5) %>
+
+	<%= f.submit "Review #{@restaurant.name}, #{@restaurant.location_name}" %>
+
+<% end %>
+ 

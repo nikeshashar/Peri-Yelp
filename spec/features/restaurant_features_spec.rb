@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-	describe 'restaurants' do 
+	context 'restaurants' do 
 
 		it 'should have no restaurants' do 
 			visit '/restaurants'
@@ -36,7 +36,7 @@ require 'rails_helper'
 	end
 
 
-	context 'creating restaurants' do
+	context 'creating a restaurant' do
 		it 'should fill in a form with the details and end up on the index page' do
 			visit '/restaurants'
 			click_link 'Add a restaurant'

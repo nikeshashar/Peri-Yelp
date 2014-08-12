@@ -3,6 +3,8 @@ class Restaurant < ActiveRecord::Base
 		location_name
 	end
 
+	has_many :reviews
+
 	validates :name, presence: true
 	validates :location_name, uniqueness: true, presence: true
 

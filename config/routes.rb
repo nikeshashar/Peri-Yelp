@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :restaurants
+  resources :restaurants do 
+    resources :reviews
+  end
 
   # get 'name/:id/location_name' => 'restaurants#location_name', as: :location_name
   # The priority is based upon order of creation: first created -> highest priority.
