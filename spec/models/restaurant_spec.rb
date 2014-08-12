@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Restaurant, :type => :model do
+
 	context 'create restaurant' do 
 		it 'can create a new restaurant' do
 	      	Restaurant.create(name: "Nandos", location_name: 'shoreditch')
