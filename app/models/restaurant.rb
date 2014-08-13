@@ -13,7 +13,7 @@ class Restaurant < ActiveRecord::Base
 
 		reviews.inject(0) do |sum, review|
 			sum + review.rating 
-		end
+		end / reviews.count
 	end
 
 end

@@ -17,6 +17,14 @@ RSpec.describe Restaurant, :type => :model do
                 expect(restaurant.average_rating).to eq 4
             end
         end
+
+        context 'multiple reviews' do 
+            it 'returns the average of all ratings' do 
+                restaurant.reviews.create(rating: 3)
+                restaurant.reviews.create(rating: 5)
+                expect(restaurant.average_rating).to eq 4
+            end
+        end
     end
 
     describe 'validations for creating a restaurant' do 
