@@ -8,12 +8,12 @@ require 'rails_helper'
 		it 'allows users to leave a review using a form which appear alongside restaurants' do 			
 			leave_review('I liked it', 3)
 			expect(current_path).to eq restaurants_path
-			expect(page).to have_content 'I liked it (3)'
+			expect(page).to have_content 'I liked it (★★★)'
 		end
 
 		it 'will display the average rating from all reviews' do 
 			leave_review('I liked it', 3)
 			leave_review('Great', 5)
-			expect(page).to have_content 'Average Rating: 4' 
+			expect(page).to have_content 'Average Rating: ★★★★' 
 		end
 	end
