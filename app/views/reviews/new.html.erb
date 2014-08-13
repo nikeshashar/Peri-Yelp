@@ -3,7 +3,7 @@
  	<%= f.text_area :comments	%>
 
 	<%= f.label :rating %>
-	<%= f.select :rating, (1..5) %>
+	<%= f.select :rating, Review::VALID_RATINGS %>
 
 	<%= f.submit "Review #{@restaurant.name}, #{@restaurant.location_name}" %>
 
