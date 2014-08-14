@@ -5,6 +5,7 @@
 
     <h3>Average Rating: <%= star_rating(restaurant.average_rating) %></h3>
 
+
     <h4><%= restaurant.address %></h4>
     <h4><%= restaurant.phone_number %></h4>
     <h4><%= restaurant.location_name %></h4>
@@ -16,7 +17,12 @@
 	<ul>
 		<% restaurant.reviews.each do |review| %>
 		<li><%= "#{review.comments} (#{star_rating(review.rating)})"
-		%></li>
+		%>
+		<em>Posted: <%= time_ago_in_words(review.created_at) %></em>
+		<%= review.likes.count %> likes
+		<%= link_to 'Likes', review_likes_path(review), method: :post %>
+
+	</li>
 		<% end %>
 	</ul>
 
