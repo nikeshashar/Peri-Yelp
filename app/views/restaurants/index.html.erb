@@ -19,8 +19,11 @@
 		<li><%= "#{review.comments} (#{star_rating(review.rating)})"
 		%>
 		<em>Posted: <%= time_ago_in_words(review.created_at) %></em>
-		<%= review.likes.count %> likes
-		<%= link_to 'Likes', review_likes_path(review), method: :post %>
+		<span class='likes_count'>
+		<%= review.likes.count %> 
+		</span> likes
+		
+		<%= link_to 'Likes', review_likes_path(review), class: 'like-link' %>
 
 	</li>
 		<% end %>

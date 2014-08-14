@@ -6,7 +6,7 @@ describe 'endorsing reviews' do
 		nandos.reviews.create(rating: 5, comments: 'Peri-licious')
 	end
 
-	it 'can like reviews updating the reviews like count' do 
+	it 'can like reviews updating the reviews like count', js: true do 
 		visit restaurants_path
 		click_link 'Like'
 		expect(page).to have_content '1 likes'
