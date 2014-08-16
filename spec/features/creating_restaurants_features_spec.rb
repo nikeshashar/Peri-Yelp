@@ -10,12 +10,8 @@ end
 
 context 'logged in' do 
 	before do
-		# nikesh = User.create(email: 'n@n.com', password: '12345678', password_confirmation: '12345678')
-		visit '/users/sign_up'
-		fill_in "user[email]", with: "n@n.com"
-		fill_in "user[password]", with: "12345678"
-		fill_in "user[password_confirmation]", with: "12345678"
-		click_button 'Sign up'
+		nikesh = User.create(email: 'n@n.com', password: '12345678', password_confirmation: '12345678')
+		login_as nikesh
 	end
 
 	context 'creating a restaurant' do

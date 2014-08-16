@@ -40,11 +40,8 @@ require 'rails_helper'
 		context 'editing restaurants' do
 			before do 
 				Restaurant.create(name: 'Nandos', phone_number: '02089540598', location_name: 'shoreditch')
-				visit '/users/sign_up'
-				fill_in "user[email]", with: "n@n.com"
-				fill_in "user[password]", with: "12345678"
-				fill_in "user[password_confirmation]", with: "12345678"
-				click_button 'Sign up'
+				nikesh = User.create(email: 'n@n.com', password: '12345678', password_confirmation: '12345678')
+				login_as nikesh
 			end
 
 			it 'should allow user to edit restaurant' do
@@ -60,12 +57,8 @@ require 'rails_helper'
 		context 'deleting restaurants' do
 			before do 
 				Restaurant.create(name: 'Nandos', phone_number: '02089540598', location_name: 'shoreditch')
-				visit '/users/sign_up'
-				fill_in "user[email]", with: "n@n.com"
-				fill_in "user[password]", with: "12345678"
-				fill_in "user[password_confirmation]", with: "12345678"
-				click_button 'Sign up'
-
+				nikesh = User.create(email: 'n@n.com', password: '12345678', password_confirmation: '12345678')
+				login_as nikesh
 			end
 
 			it 'should remove restaurant when user clicks delete link' do
