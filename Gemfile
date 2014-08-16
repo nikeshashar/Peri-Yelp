@@ -32,6 +32,8 @@ group :development, :test do
 	gem 'capybara'
 	gem 'poltergeist'
 	gem 'database_cleaner'
+	gem 'devise'
+	gem 'warden'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
