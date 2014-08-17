@@ -37,23 +37,6 @@ require 'rails_helper'
 
 	context 'logged in' do 
 
-		context 'editing restaurants' do
-			before do 
-				Restaurant.create(name: 'Nandos', phone_number: '02089540598', location_name: 'shoreditch')
-				nikesh = User.create(email: 'n@n.com', password: '12345678', password_confirmation: '12345678')
-				login_as nikesh
-			end
-
-			it 'should allow user to edit restaurant' do
-				visit '/restaurants'
-				click_link 'Edit Nandos'
-				fill_in 'Name', with: 'Nandos - Edgware'
-				click_button 'Update Restaurant'
-				expect(page).to have_content 'Nandos - Edgware'
-				expect(current_path).to eq '/restaurants'
-			end
-		end
-
 		context 'deleting restaurants' do
 			before do 
 				Restaurant.create(name: 'Nandos', phone_number: '02089540598', location_name: 'shoreditch')
