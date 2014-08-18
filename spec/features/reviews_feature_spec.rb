@@ -15,15 +15,13 @@ context 'logged in' do
 			nikesh.restaurants.create(name: 'Nandos', location_name: 'Shoreditch')
 		end
 
-		it 'allows users to leave a review using a form which appear alongside restaurants' do 
-			visit '/'			
+		it 'allows users to leave a review using a form which appear alongside restaurants' do 			
 			leave_review('I liked it', 3)
 			expect(current_path).to eq restaurants_path
 			expect(page).to have_content 'I liked it (★★★)'
 		end
 
 		it 'will display the average rating from all reviews' do 
-			visit '/restaurants'
 			leave_review('I liked it', 3)
 		
 			sonu = User.create(email: 's@s.com', password: '12345678', password_confirmation: '12345678')
@@ -34,7 +32,6 @@ context 'logged in' do
 		end
 
 		it 'does not allow users to leave duplicate reviews' do 
-			visit '/restaurants'
 			leave_review('I liked it', 3)
 			expect(page).not_to have_link 'Review Nandos, Shoreditch'
 		end

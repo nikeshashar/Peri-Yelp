@@ -21,7 +21,8 @@ class RestaurantsController < ApplicationController
 	end
 
 	def edit
-		@restaurant = current_user.restaurants.find(params[:id])
+		# raise current_user.restaurants.inspect
+		@restaurant = current_user.restaurants.find_by!(location_name: params[:id])
 	rescue ActiveRecord::RecordNotFound
 		flash[:notice] = 'This is not your restaurant'
 		redirect_to '/restaurants'

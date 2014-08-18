@@ -12,10 +12,9 @@
 
 	<%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
 	<%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
-	<%= link_to "Review #{restaurant.name} #{restaurant.location_name}", new_restaurant_review_path(restaurant) %>
 
-	<% if restaurant.has_been_reviewed_by?(current_user) %>
-		<% link_to "Review #{restaurant.name}, #{restaurant.location_name}",
+	<% unless restaurant.has_been_reviewed_by?(current_user) %>
+		<%= link_to "Review #{restaurant.name}, #{restaurant.location_name}",
 		new_restaurant_review_path(restaurant) %>
 	<% end %>
 

@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 group :development, :test do 
 	gem 'rspec-rails'
 	gem 'rspec-collection_matchers'
+	gem 'rspec-activemodel-mocks'
 	gem 'capybara'
 	gem 'poltergeist'
 	gem 'database_cleaner'
