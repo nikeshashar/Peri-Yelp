@@ -23,16 +23,20 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'rails_12factor'
+gem 'devise'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 group :development, :test do 
 	gem 'rspec-rails'
 	gem 'rspec-collection_matchers'
+	gem 'rspec-activemodel-mocks'
 	gem 'capybara'
 	gem 'poltergeist'
 	gem 'database_cleaner'
-	gem 'devise'
+	
 	gem 'warden'
 end
 # Use ActiveModel has_secure_password

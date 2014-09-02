@@ -11,6 +11,8 @@ class RestaurantsController < ApplicationController
 
 	def create
 		@restaurant = Restaurant.new(params[:restaurant].permit(:name, :location_name, :address))
+		@restaurant.user = current_user
+
 		if @restaurant.save
 			redirect_to '/restaurants'
 		else
@@ -19,7 +21,11 @@ class RestaurantsController < ApplicationController
 	end
 
 	def edit
-		@restaurant = Restaurant.find_by_location_name(params[:id])
+		# raise current_user.restaurants.inspect
+		@restaurant = current_user.restaurants.find_by!(location_name: params[:id])
+	rescue ActiveRecord::RecordNotFound
+		flash[:notice] = 'This is not your restaurant'
+		redirect_to '/restaurants'
 	end
 
 	def update
