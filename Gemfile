@@ -23,6 +23,8 @@ gem 'sdoc', '~> 0.4.0',   group: :doc
 gem 'devise'
 gem 'spring',             group: :development
 gem 'rails_12factor',     group: :production
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails' 
 
 group :development, :test do 
 	gem 'rspec-rails'
