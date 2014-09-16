@@ -32,6 +32,7 @@ group :development, :test do
 	gem 'poltergeist'
 	gem 'database_cleaner'
 	gem 'warden'
+  gem "codeclimate-test-reporter"
 end
 
 
