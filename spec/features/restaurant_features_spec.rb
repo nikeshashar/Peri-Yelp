@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+describe 'Restaurant Features' do
 	context 'restaurants' do 
 		it 'should have no restaurants' do 
 			visit '/restaurants'
@@ -33,6 +33,7 @@ require 'rails_helper'
 			expect(page).to have_content '1 Nandos Road'
 		end
 	end
+end
 
 
 	context 'logged in' do 
