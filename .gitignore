@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/config/secrets.yml
+.DS_Store
+/coverage
+/coverage/.last_run.json
