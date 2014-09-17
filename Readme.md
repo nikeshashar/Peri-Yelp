@@ -1,6 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/nikeshashar/Peri-Yelp/badges/gpa.svg)](https://codeclimate.com/github/nikeshashar/Peri-Yelp)
-
-[![Test Coverage](https://codeclimate.com/github/nikeshashar/Peri-Yelp/badges/coverage.svg)](https://codeclimate.com/github/nikeshashar/Peri-Yelp)
+[![Code Climate](https://codeclimate.com/github/nikeshashar/Peri-Yelp/badges/gpa.svg)](https://codeclimate.com/github/nikeshashar/Peri-Yelp)  [![Test Coverage](https://codeclimate.com/github/nikeshashar/Peri-Yelp/badges/coverage.svg)](https://codeclimate.com/github/nikeshashar/Peri-Yelp)
 
 ## Where to see it
 
