@@ -10,8 +10,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,6 +23,7 @@ gem 'spring',             group: :development
 gem 'rails_12factor',     group: :production
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails' 
+gem 'codeclimate-test-reporter', group: :test, require: nil
 
 group :development, :test do 
 	gem 'rspec-rails'
@@ -34,7 +33,6 @@ group :development, :test do
 	gem 'poltergeist'
 	gem 'database_cleaner'
 	gem 'warden'
-  gem "codeclimate-test-reporter"
 end
 
 
