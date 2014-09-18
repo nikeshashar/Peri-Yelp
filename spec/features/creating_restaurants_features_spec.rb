@@ -24,5 +24,14 @@ context 'logged in' do
 			expect(page).to have_content 'Nandos'
 			expect(current_path).to eq '/restaurants'
 		end
+
+		it 'should show a new form page if the details are not filled in properly' do 
+			visit '/restaurants'
+			click_link 'Add a restaurant'
+			fill_in 'Name', with: "Nandos"
+			fill_in 'Location name', with: 'shoreditch'
+			click_button 'Create Restaurant'
+			expect(current_path).to eq '/restaurants'
+		end
 	end
 end
