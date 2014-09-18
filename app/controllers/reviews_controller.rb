@@ -10,9 +10,6 @@ class ReviewsController < ApplicationController
 		@review.user = current_user
 		if @review.save
 			redirect_to '/restaurants'
-		else
-			render 'new'
 		end
-
 	end
 end
