@@ -23,11 +23,9 @@ context 'logged in' do
 
 		it 'will display the average rating from all reviews' do 
 			leave_review('I liked it', 3)
-		
 			sonu = User.create(email: 's@s.com', password: '12345678', password_confirmation: '12345678')
 			login_as sonu
 			leave_review('Great', 5)
-
 			expect(page).to have_content 'Average Rating: ★★★★' 
 		end
 
