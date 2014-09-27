@@ -25,6 +25,7 @@ A working version of the app can be found here: [Yelp](http://peaceful-fjord-853
   + Amazon S3
   + Paperclip
   + Imagemagick
+  + Bootstrap
   
 
 ### How to set it up
