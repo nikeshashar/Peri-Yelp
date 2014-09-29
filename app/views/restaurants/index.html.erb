@@ -9,15 +9,11 @@
               <h3 class="panel-title"><%= restaurant.name %> | <%= restaurant.location_name %></h3>
             </div>
             <div class="panel-body">
-        
-           
+               
         <h3>Average Rating: <%= star_rating(restaurant.average_rating) %></h3>
         <h4><%= restaurant.address %></h4>
         <h4><%= restaurant.phone_number %></h4>
-       
-   
     
-
         <ul class="mainlist">
           <% restaurant.reviews.each do |review| %>
           <li class="eachlistitem"><%= "#{review.comments} (#{star_rating(review.rating)})"

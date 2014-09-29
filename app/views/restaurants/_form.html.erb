@@ -1,24 +1,30 @@
-<%= form_for @restaurant do |f| %>
+<section class="container">
+  <form role="form">
+    <div class="form-group">
+      <%= form_for @restaurant do |f| %>
 
-<% if @restaurant.errors.any? %>
-  	<div id="error_explanation">
-	    <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this record from being saved:</h2>
-		    <ul>
-			    <% @restaurant.errors.full_messages.each do |msg| %>
-				   	<li><%= msg %></li>
-			    <% end %>
-		    </ul>
-  	</div>
-<% end %>
+      <% if @restaurant.errors.any? %>
+        	<div id="error_explanation">
+      	    <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this record from being saved:</h2>
+      		    <ul>
+      			    <% @restaurant.errors.full_messages.each do |msg| %>
+      				   	<li><%= msg %></li>
+      			    <% end %>
+      		    </ul>
+        	</div>
+      <% end %>
 
- <%= f.label :name %>
- <%= f.text_field :name, value: 'Nandos' %>
+       <%= f.label :name %>
+       <%= f.text_field :name, value: 'Nandos' %>
 
- <%= f.label :location_name %>
- <%= f.text_field :location_name %>
+       <%= f.label :location_name %>
+       <%= f.text_field :location_name %>
 
- <%= f.label :address %>
- <%= f.text_field :address %>
+       <%= f.label :address %>
+       <%= f.text_field :address %>
 
- <%= f.submit  %>
-<% end %>
+       <%= f.submit  %>
+      <% end %>
+    </div>
+  </form>
+</section>
