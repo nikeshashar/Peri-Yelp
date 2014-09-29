@@ -26,11 +26,11 @@
           <% if user_signed_in? %>
           	Logged in as <%= current_user.email %>
           	<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-md btn-danger", role:"button" %>
+            <%= link_to 'Add a restaurant', new_restaurant_path, class:"btn btn-md btn-success", role:"button" %>
           	<% else %>
           	<%= link_to 'Sign in', new_user_session_path, class:"btn btn-md btn-success", role:"button"  %>
           	<%= link_to 'Sign up', new_user_registration_path, class:"btn btn-md btn-warning", role:"button"  %>
           <% end %>
-         <!--  <button type="submit" class="btn btn-success">Sign in</button> -->
         </form>
       </div><!--/.navbar-collapse -->
     </div>
@@ -39,12 +39,10 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Yelp!</h1>
-        <p>What is this app?.</p>
-        <!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p> -->
+        <p>What is this app?.</p> 
       </div>
     </div>
 
-    <!--  -->
 
   <%= notice %>
   <%= yield %>
