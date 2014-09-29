@@ -1,6 +1,6 @@
 <main class='container'>
-  <% if @restaurants.any? %>
     <section class='row'>
+      <% if @restaurants.any? %>
       
       <% @restaurants.each do |restaurant| %>
       <article class='post col-sm-6 col-md-4'>
@@ -18,9 +18,9 @@
    
     
 
-        <ul>
+        <ul class="mainlist">
           <% restaurant.reviews.each do |review| %>
-          <li><%= "#{review.comments} (#{star_rating(review.rating)})"
+          <li class="eachlistitem"><%= "#{review.comments} (#{star_rating(review.rating)})"
           %>
           <em>Posted: <%= time_ago_in_words(review.created_at) %></em>
           <span class='likes_count'>
@@ -29,6 +29,7 @@
           <%= link_to 'Likes', review_likes_path(review), class: 'like-link' %>
         </li>
           <% end %>
+        </ul>
               <div class="panel-footer"> 
                   <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
                   <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
@@ -39,10 +40,10 @@
               </div>
             </div>
           </div>
-        </ul>
+      
       </article>
-    </section>
     <% end %>
+    </section>
   <% else %>
   	No restaurants yet
   <% end %>
