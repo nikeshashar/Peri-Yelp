@@ -26,7 +26,7 @@ context 'logged in' do
 			sonu = User.create(email: 's@s.com', password: '12345678', password_confirmation: '12345678')
 			login_as sonu
 			leave_review('Great', 5)
-			expect(page).to have_content 'Average Rating: ★★★★' 
+			expect(page).to have_content '★★★★' 
 		end
 
 		it 'does not allow users to leave duplicate reviews' do 
