@@ -1,23 +1,24 @@
+<main class='container'>
+	<% if @review.errors.any? %>
+	  	<div id="error_explanation">
+		    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this record from being saved:</h2>
+			    <ul>
+				    <% @review.errors.full_messages.each do |msg| %>
+					   	<li><%= msg %></li>
+				    <% end %>
+			    </ul>
+	  	</div>
+	<% end %>
 
-<% if @review.errors.any? %>
-  	<div id="error_explanation">
-	    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this record from being saved:</h2>
-		    <ul>
-			    <% @review.errors.full_messages.each do |msg| %>
-				   	<li><%= msg %></li>
-			    <% end %>
-		    </ul>
-  	</div>
-<% end %>
+	<%= form_for [@restaurant, @review] do |f| %>
+		
+		<%= f.label :comments, 'Grill Skill', class: "control-label"	%>
+	 	<%= f.text_area :comments, class: "form-control"	%>
 
-<%= form_for [@restaurant, @review] do |f| %>
-	<%= f.label :comments, 'Grill Skill'		%>
- 	<%= f.text_area :comments	%>
+		<%= f.label :rating %>
+		<%= f.select :rating, Review::VALID_RATINGS %>
 
-	<%= f.label :rating %>
-	<%= f.select :rating, Review::VALID_RATINGS %>
+		<%= f.submit "Review #{@restaurant.name}, #{@restaurant.location_name}" %>
 
-	<%= f.submit "Review #{@restaurant.name}, #{@restaurant.location_name}" %>
-
-<% end %>
- 
+	<% end %>
+</main> 
