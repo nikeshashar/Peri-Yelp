@@ -24,6 +24,7 @@ gem 'rails_12factor',     group: :production
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails' 
 gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'newrelic_rpm'
 
 group :development, :test do 
 	gem 'rspec-rails'
