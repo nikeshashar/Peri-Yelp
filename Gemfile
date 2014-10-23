@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails' 
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'newrelic_rpm'
+gem 'skylight'
 
 group :development, :test do 
 	gem 'rspec-rails'
