@@ -69,7 +69,7 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.1)
+    json (1.8.6)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -112,8 +112,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
-    rdoc (4.1.1)
-      json (~> 1.4)
+    rdoc (6.0.1)
     rspec-activemodel-mocks (1.0.1)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -142,9 +141,8 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
+    sdoc (1.0.0)
+      rdoc (>= 5.0)
     simplecov (0.9.0)
       docile (~> 1.1.0)
       multi_json
@@ -203,7 +201,7 @@ DEPENDENCIES
   rspec-collection_matchers
   rspec-rails
   sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
+  sdoc (~> 1.0.0)
   skylight
   spring
   turbolinks
